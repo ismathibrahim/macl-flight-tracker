@@ -14,10 +14,15 @@ const Home = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [status, setStatus] = useState<ArrivalStatus | DepartureStatus | "">("");
+  const [status, setStatus] = useState<ArrivalStatus | DepartureStatus | "">(
+    ""
+  );
 
-  const { data: flights, isLoading } = useFlights({direction, search: searchTerm, status});
-
+  const { data: flights, isLoading } = useFlights({
+    direction,
+    search: searchTerm,
+    status,
+  });
 
   return (
     <div className="p-4 space-y-4">
@@ -33,14 +38,22 @@ const Home = () => {
         </div>
       </div>
 
-      <StatusFilter value={status} onChange={(value: ArrivalStatus | DepartureStatus | "") => setStatus(value)} />
-
       <DirectionSwitcher
         value={direction}
         onChange={(value) => setDirection(value)}
       />
 
-      <SearchField value={searchTerm} onChange={(value) => setSearchTerm(value)} placeholder="Search flights" />
+      <SearchField
+        value={searchTerm}
+        onChange={(value) => setSearchTerm(value)}
+        placeholder="Search flights"
+      />
+      <StatusFilter
+        value={status}
+        onChange={(value: ArrivalStatus | DepartureStatus | "") =>
+          setStatus(value)
+        }
+      />
 
       {isLoading ? (
         <div className="p-4">Loading...</div>
