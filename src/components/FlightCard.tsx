@@ -1,4 +1,3 @@
-import React from "react";
 import { Flight } from "../lib/types";
 
 import EmiratesLogo from "../assets/images/emirates.png";
