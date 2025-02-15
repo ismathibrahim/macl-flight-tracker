@@ -1,74 +1,53 @@
+import { Button } from "react-aria-components";
 import { ArrivalStatus, DepartureStatus } from "../lib/types";
 
 interface StatusFilterProps {
   value: ArrivalStatus | DepartureStatus | "";
   onChange: (value: ArrivalStatus | DepartureStatus | "") => void;
+  direction?: "arrival" | "departure";
 }
-const StatusFilter = ({value, onChange}: StatusFilterProps) => {
+const StatusFilter = ({ value, onChange, direction }: StatusFilterProps) => {
+  const statuses =
+    direction === "arrival" ? arrivalStatuses : departureStatuses;
+
   return (
     <div className="flex flex-wrap gap-2">
-      <button
-        onClick={() => onChange("")}
-        className={`px-3 py-1 rounded-full text-sm ${
-          value === "" 
-            ? "bg-bg-accent text-text-base" 
-            : "bg-bg-base text-text-subtle"
-        }`}
-      >
-        All
-      </button>
-      <button
-        onClick={() => onChange("On-Schedule")}
-        className={`px-3 py-1 rounded-full text-sm ${
-          value === "On-Schedule"
-            ? "bg-bg-accent text-text-base"
-            : "bg-bg-base text-text-subtle"
-        }`}
-      >
-        On Time
-      </button>
-      <button
-        onClick={() => onChange("Delayed")}
-        className={`px-3 py-1 rounded-full text-sm ${
-          value === "Delayed"
-            ? "bg-bg-accent text-text-base"
-            : "bg-bg-base text-text-subtle"
-        }`}
-      >
-        Delayed
-      </button>
-      <button
-        onClick={() => onChange("Boarding")}
-        className={`px-3 py-1 rounded-full text-sm ${
-          value === "Boarding"
-            ? "bg-bg-accent text-text-base"
-            : "bg-bg-base text-text-subtle"
-        }`}
-      >
-        Boarding
-      </button>
-      <button
-        onClick={() => onChange("Final Call")}
-        className={`px-3 py-1 rounded-full text-sm ${
-          value === "Final Call"
-            ? "bg-bg-accent text-text-base"
-            : "bg-bg-base text-text-subtle"
-        }`}
-      >
-        Final Call
-      </button>
-      <button
-        onClick={() => onChange("Gate Closed")}
-        className={`px-3 py-1 rounded-full text-sm ${
-          value === "Gate Closed"
-            ? "bg-bg-accent text-text-base"
-            : "bg-bg-base text-text-subtle"
-        }`}
-      >
-        Gate Closed
-      </button>
+      {statuses.map((status) => (
+        <Button
+          aria-label={status}
+          key={status}
+          onPress={() => (status === "All" ? onChange("") : onChange(status))}
+          className={`px-3 py-1 rounded-full text-sm border border-border-base ${
+            (value === status || (status === "All" && value === "")) &&
+            "bg-bg-base"
+              ? "bg-bg-disabled text-text-base"
+              : "bg-bg-base text-text-subtle"
+          }`}
+        >
+          {status}
+        </Button>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default StatusFilter
+const arrivalStatuses: (ArrivalStatus | "All")[] = [
+  "All",
+  "On-Schedule",
+  "Delayed",
+  "Cancelled",
+  "Diverted",
+  "Landed",
+];
+
+const departureStatuses: (DepartureStatus | "All")[] = [
+  "All",
+  "On-Schedule",
+  "Boarding",
+  "Final Call",
+  "Gate Closed",
+  "Cancelled",
+  "Departed",
+];
+
+export default StatusFilter;

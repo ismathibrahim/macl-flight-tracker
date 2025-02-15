@@ -31,3 +31,19 @@ npm run dev
 ```
 
 4. Open your browser and navigate to `http://localhost:3000`.
+
+## Tech Stack
+
+This project uses several modern React libraries and tools:
+
+- **React Router** - For client-side routing and navigation between screens
+- **React Query** - For managing server state and data fetching
+- **React Aria Components** - For building accessible UI components
+- **Phosphor Icons** - For modern, customizable icons
+- **Class Variance Authority** - For type-safe component variants
+- **Tailwind CSS** - For utility-first styling
+- **Vaul** - For drawer/sheet components
+
+## Project Structure
+The project follows a standard React application structure:
+
