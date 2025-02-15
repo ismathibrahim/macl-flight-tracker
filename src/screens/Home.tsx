@@ -5,6 +5,7 @@ import FlightCard from "../components/FlightCard";
 import SearchField from "../components/SearchField";
 import { Button } from "react-aria-components";
 import { ArrivalStatus, DepartureStatus } from "../lib/types";
+import StatusFilter from "../components/StatusFilter";
 
 const Home = () => {
   const [direction, setDirection] = useState<"arrival" | "departure">(
@@ -31,6 +32,8 @@ const Home = () => {
           </Button>
         </div>
       </div>
+
+      <StatusFilter value={status} onChange={(value: ArrivalStatus | DepartureStatus | "") => setStatus(value)} />
 
       <DirectionSwitcher
         value={direction}

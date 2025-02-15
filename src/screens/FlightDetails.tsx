@@ -1,6 +1,3 @@
-import React from 'react'
-import { useLocation } from 'react-router'
-
 const flightData = {
   id: "MV101",
   flightNumber: "Q2 101",
@@ -12,15 +9,8 @@ const flightData = {
 }
 
 const FlightDetails = () => {
-
-  const { pathname } = useLocation();
-  const flightNumber = pathname.split('/')[2];
   return (
     <div>FlightDetails
-
-
-      
-
       <div className="bg-bg-subtle max-w-sm mx-auto p-4">
         <div className="bg-bg-base border border-border-base rounded-lg p-4">
           <div className="flex justify-between items-start">
@@ -51,7 +41,7 @@ const FlightDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+     </div>
   )
 }
 
