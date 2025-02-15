@@ -18,10 +18,10 @@ const StatusFilter = ({ value, onChange, direction }: StatusFilterProps) => {
           key={status}
           onPress={() => (status === "All" ? onChange("") : onChange(status))}
           className={`px-3 py-1 rounded-full text-sm border border-border-base cursor-pointer ${
-            (value === status || (status === "All" && value === "")) &&
-            "bg-bg-base"
+            (value === status || (status === "All" && value === "")) 
+  
               ? "bg-bg-disabled text-text-base"
-              : "bg-bg-base text-text-subtle"
+              : "bg-bg-base text-text-subtle card-shadow"
           }`}
         >
           {status}

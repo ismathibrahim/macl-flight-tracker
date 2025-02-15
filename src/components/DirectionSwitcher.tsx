@@ -15,7 +15,7 @@ const DirectionSwitcher = ({ value, onChange }: DirectionSwitcherProps) => {
           onPress={() => onChange("arrival")}
           className={`w-1/2 px-4 py-2 rounded-xl focus:outline-none cursor-pointer ${
             value === "arrival"
-              ? "bg-bg-base text-text-base border border-border-base"
+              ? "bg-bg-base text-text-base border border-border-base card-shadow"
               : "bg-bg-disabled text-text-subtle hover:text-text-base"
           }`}
         >
@@ -29,7 +29,7 @@ const DirectionSwitcher = ({ value, onChange }: DirectionSwitcherProps) => {
           onPress={() => onChange("departure")}
           className={`w-1/2 px-4 py-2 rounded-xl focus:outline-none cursor-pointer ${
             value === "departure"
-              ? "bg-bg-base text-text-base border border-border-base"
+              ? "bg-bg-base text-text-base border border-border-base card-shadow"
               : "bg-bg-disabled text-text-subtle hover:text-text-base"
           }`}
         >

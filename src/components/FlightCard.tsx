@@ -9,7 +9,7 @@ interface Props {
 }
 const FlightCard = ({ flight }: Props) => {
   return (
-    <div className="bg-bg-base w-full border border-border-base p-4 rounded-3xl">
+    <div className="bg-bg-base w-full border border-border-base p-4 rounded-3xl card-shadow">
       <div className="flex gap-2 items-start border-b border-border-strong pb-3 mb-3 border-dashed hover:border-border-strong">
         <div className="flex gap-3 items-center grow">
           <div>

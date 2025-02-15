@@ -25,10 +25,10 @@ const SearchField = ({
   ...props
 }: MySearchFieldProps) => {
   return (
-    <SearchFieldPrimitive aria-label="Search flights" {...props} className={"relative w-full bg-bg-base h-10 rounded-lg border border-border-base text-text-base"}>
-      <MagnifyingGlass className="absolute top-1/2 left-2 -translate-y-1/2 text-text-base" />
+    <SearchFieldPrimitive aria-label="Search flights" {...props} className={"relative w-full bg-bg-base h-12 rounded-2xl border border-border-base text-text-base"}>
+      <MagnifyingGlass className="absolute top-1/2 left-3 -translate-y-1/2 text-text-base" />
       {label && <Label>{label}</Label>}
-      <Input placeholder={placeholder} className={"px-8 text-sm h-full w-full rounded-lg"} />
+      <Input placeholder={placeholder} className={"px-10 text-sm h-full w-full rounded-lg"} />
       {/* <Button><X/></Button> */}
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
