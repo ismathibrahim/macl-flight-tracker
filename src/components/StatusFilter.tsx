@@ -17,7 +17,7 @@ const StatusFilter = ({ value, onChange, direction }: StatusFilterProps) => {
           aria-label={status}
           key={status}
           onPress={() => (status === "All" ? onChange("") : onChange(status))}
-          className={`px-3 py-1 rounded-full text-sm border border-border-base ${
+          className={`px-3 py-1 rounded-full text-sm border border-border-base cursor-pointer ${
             (value === status || (status === "All" && value === "")) &&
             "bg-bg-base"
               ? "bg-bg-disabled text-text-base"

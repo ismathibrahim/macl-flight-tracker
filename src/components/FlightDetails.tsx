@@ -48,7 +48,7 @@ const FlightDetails = ({ flight, isOpen, onOpenChange }: Props) => {
                 <p className="text-text-base font-medium">{
               flight.direction === "arrival" ? flight.destination : "Velana Int. Airport"
               }</p>
-                <p className="text-text-subtle text-sm ">10:32</p>
+                <p className="text-text-subtle text-sm ">Feb 14, 10:32</p>
               </div>
 
 
@@ -61,7 +61,7 @@ const FlightDetails = ({ flight, isOpen, onOpenChange }: Props) => {
                 <p className="text-text-base font-medium">{
               flight.direction === "arrival" ? "Velana Int. Airport" : flight.destination
               }</p>
-                <p className="text-text-subtle text-sm ">18:12</p>
+                <p className="text-text-subtle text-sm ">Feb 14, 18:12</p>
               </div>
             </div>
 
